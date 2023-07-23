@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Full Stack Project</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <p>Project</p>
+  </a>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+        </header>
+        
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+
+            <li><span>Image uploaded</span></li>
+            <li><span>Explainabe AI using Lime</span></li>
+            <li><span>Drift Detection</span></li>
+          </ul>
+        </nav>
+
+        <ul class="l-main-content main-content">
+          
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>Image Classifier</h2>
+                  
+                  <h1>Given Image<br></h1>
+                  <img src="{{ url_for('static', filename=user_image) }}" alt="{{user_image}}">
+                  
+                  <h1><br><br>Predicted Class: "{{prediction}}"<br></h1>
+                  <img src="{{url_for('static', filename=lime_explanation) }}" alt="LIME Explanation">
+                <img src="assets/img/about-visual.png" alt="About Us">
+              </div>
+
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>LIME<br></h2>
+                <img src="{{url_for('static', filename=lime_explanation) }}" alt="LIME Explanation">
+
+                <img src="assets/img/about-visual.png" alt="About Us">
+              </div>
+
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>Drift Calculation</h2>
+                <h1>Train Generator Drift Value: "{{tr_drift}}"</h1>
+                <h1>Test Generator Drift Value: "{{ts_drift}}"</h1>
+                <h1>Concept Drift Score: "{{cs_drift}}"</h1>
+                <img src="{{url_for('static', filename=drift__path) }}" alt="Data Drift Comparison">
+                <img src="assets/img/about-visual.png" alt="About Us">
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>
